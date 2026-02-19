@@ -4,11 +4,14 @@ pipeline{
          nodejs 'nodejs-22-6-0'
     }
     stages{
-        stage("build"){
+        stage("Istalling Dependency"){
             steps{
             sh ''' node -v 
                    npm -v '''
             }
         }
+       stage("Audit Scan"){
+           steps{
+               sh ' npm audit --audit-level=critical ' 
     }
 }
