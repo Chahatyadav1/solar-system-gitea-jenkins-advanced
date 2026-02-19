@@ -13,5 +13,6 @@ pipeline{
        stage("Audit Scan"){
            steps{
                sh ' npm audit --audit-level=critical ' 
+        }
     }
 }
