@@ -15,4 +15,5 @@ pipeline{
                sh ' npm audit --audit-level=critical ' 
         }
     }
+ }
 }
