@@ -21,6 +21,8 @@ pipeline {
 
                 stage("Audit Scan") {
                     steps {
+                         sh 'npm install mongoose@latest'
+                        sh 'npm install form-data@latest'
                         sh 'npm audit --audit-level=critical'
                     }
                 }
