@@ -24,6 +24,7 @@ pipeline {
                          sh 'npm install mongoose@latest'
                         sh 'npm install form-data@latest'
                         sh 'npm audit --audit-level=critical'
+                        sh 'echo $?'
                     }
                 }
 
