@@ -21,7 +21,6 @@ pipeline {
 
                 stage("Audit Scan") {
                     steps {
-                        sh 'npm audit fix --force '
                         sh 'npm audit --audit-level=critical'
                     }
                 }
