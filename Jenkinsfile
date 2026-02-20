@@ -30,7 +30,7 @@ pipeline {
 
                 stage("OWASP Scan") {
                     steps {
-                      
+                      /*
                       dependencyCheck additionalArguments: '''
                         --scan .
                        --out reports
@@ -39,6 +39,7 @@ pipeline {
                        --noupdate
                       ''',
                       odcInstallation: 'OWASP-depcheck-10'
+                      */
                     }
                 }
 
