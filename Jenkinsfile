@@ -30,6 +30,7 @@ pipeline {
 
                 stage("OWASP Scan") {
                     steps {
+                        sh 'echo "OSWAP step skip"'
                       /*
                       dependencyCheck additionalArguments: '''
                         --scan .
