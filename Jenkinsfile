@@ -33,6 +33,7 @@ pipeline {
                           --scan \'./\' 
                           --out \'./\' 
                           --format \'ALL\'
+                          --noupdate  # i dont have api key. this check only inside machine not NVD (national vernuability database)
                           --prettyPrint''', odcInstallation: 'OWASP-depcheck-10'
                     }
                 }
