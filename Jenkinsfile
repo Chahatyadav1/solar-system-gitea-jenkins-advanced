@@ -48,6 +48,15 @@ pipeline {
 
             }
         }
+         stage('Unit Testing') {
+            options { retry(2) }
+            steps {
+                sh 'echo Colon-Separated - $MONGO_DB_CREDS'
+                sh 'echo Username - $MONGO_DB_CREDS_USR'
+                sh 'echo Password - $MONGO_DB_CREDS_PSW'
+                sh 'npm test' 
+            }
+        } 
 
     }
 }
