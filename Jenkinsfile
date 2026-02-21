@@ -35,17 +35,14 @@ pipeline {
 
                 stage("OWASP Scan") {
                     steps {
-                        sh 'echo "OSWAP step skip"'
-                      /*
-                      dependencyCheck additionalArguments: '''
-                        --scan .
-                       --out reports
-                       --format ALL
-                       --prettyPrint
-                       --noupdate
-                      ''',
-                      odcInstallation: 'OWASP-depcheck-10'
-                      */
+                        dependencyCheck additionalArguments: '''
+                            --scan \'./\' 
+                            --out \'./\'  
+                            --format \'ALL\' 
+                            --disableYarnAudit \
+                            --prettyPrint''', odcInstallation: 'OWASP-DepCheck-10'
+
+                        dependencyCheckPublisher failedTotalCritical: 1, pattern: 'dependency-check-report.xml', stopBuild: false
                     }
                 }
 
